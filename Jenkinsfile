@@ -5,7 +5,7 @@ pipeline{
             steps {
                 script {
 			sh """
-    			yamllint -f yaml service.yaml
+    			yamllint -f yaml ${WORKSPACE}/codeformatter/service.yaml
   			"""
 			}
                 }
