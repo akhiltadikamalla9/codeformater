@@ -5,7 +5,7 @@ pipeline{
             steps {
                 script {
 			sh """
-  			yamllint --version
+  			//yamllint -f yaml ${WORKSPACE}/service.yaml
      			"""
 			}
                 }
