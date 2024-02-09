@@ -5,7 +5,7 @@ pipeline{
             steps {
                 script {
 			sh """
-  			//yamllint -f yaml ${WORKSPACE}/service.yaml
+  			yamllint -f yaml ${WORKSPACE}/service.yaml
      			"""
 			}
                 }
