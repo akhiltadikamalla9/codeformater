@@ -12,9 +12,7 @@ pipeline{
             # Process the YAML file using your preferred tool here, e.g., yamllint
             yamllint $file
 
-            # Or process the content using tools like yq or jq
-            # value="$(yq '.key' $file)"
-            # echo "Value of 'key': $value"
+
           done
         """
 			}
