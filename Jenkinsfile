@@ -7,7 +7,7 @@ pipeline{
 	sh """
             # Find all YAML files in a specific directory
 	    echo "${WORKSPACE}/codeformatter"
-            find ${WORKSPACE}/codeformatter -maxdepth 1 -name "*.yaml" | while read file; do
+            find ${WORKSPACE} -maxdepth 1 -name "*.yaml" | while read file; do
             echo "Processing file: $file"
 
             # Process the YAML file using your preferred tool here, e.g., yamllint
