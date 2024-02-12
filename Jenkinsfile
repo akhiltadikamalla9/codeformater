@@ -8,11 +8,6 @@ def yamllintPath = "${WORKSPACE}"
 // Replace with your actual path
 // Define directory containing YAML files (optional, defaults to current)
 def directory = new File(".")
-
-// Set options for yamllint (optional)
-def options = ["--config=.yamllint"] // Modify options as needed
-
-// Loop through each YAML file in the directory
 directory.eachFile { file ->
   if (file.name.endsWith(".yaml") || file.name.endsWith(".yml")) {
     def command = [yamllintPath, options, file.absolutePath]
