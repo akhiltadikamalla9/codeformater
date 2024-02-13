@@ -7,6 +7,7 @@ pipeline{
 			// Define the target directory
 			def dir = new File("${WORKSPACE}")
 			echo "${WORKSPACE}"
+			sh 'ls'
 			// Iterate through all files (recursively by default)
 			dir.eachFile { file ->
 			println "Processing file: ${file.name}"
