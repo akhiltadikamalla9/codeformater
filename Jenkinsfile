@@ -16,8 +16,6 @@ pipeline{
 		    // Print output stream
 		    process.inputStream.eachLine { line ->
 		      println line
-		    }
-		  }
 		}
                 }
             }
