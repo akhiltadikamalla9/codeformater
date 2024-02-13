@@ -5,7 +5,7 @@ pipeline{
             steps {
                 script {
 			// Define the target directory
-			def dir = new File("${WORKSPACE}")
+			def dir = "${WORKSPACE}"
 			
 			// Iterate through all files (recursively by default)
 			dir.eachFile { file ->
