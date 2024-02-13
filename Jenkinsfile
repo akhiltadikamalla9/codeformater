@@ -25,7 +25,6 @@ pipeline{
 			  } else {
 			    echo "yamllint not found. Skipping YAML linting."
 			  }
-                }
             }
         }
     }
