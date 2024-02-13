@@ -17,6 +17,7 @@ pipeline{
 		    process.inputStream.eachLine { line ->
 		      println line
 		    }
+		  }
 		}
                 }
             }
