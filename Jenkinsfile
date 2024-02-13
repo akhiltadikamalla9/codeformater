@@ -5,8 +5,8 @@ pipeline{
             steps {
                 script {
 			// Define the target directory
-			def dir = "${WORKSPACE}"
-			
+			def dir = new File("${WORKSPACE}")
+			echo "${WORKSPACE}"
 			// Iterate through all files (recursively by default)
 			dir.eachFile { file ->
 			echo "11111111111111111111111"
