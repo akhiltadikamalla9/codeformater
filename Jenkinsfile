@@ -5,12 +5,17 @@ pipeline{
             steps {
                 script {
 			// Define the target directory
-			def folderPath = new File("${WORKSPACE}")
+			def baseDir = new File("${WORKSPACE}")
 			echo "${WORKSPACE}"
 			sh 'ls'
-			def files = dir(glob: '**/*.yaml', baseDir: folderPath)
+			def yamlFiles = []
+			new File(baseDir).eachFileRecurse(FileType.FILES) { file ->
+			  if (file.name.endsWith(".yaml")) {
+			    yamlFiles << file
+			  }
+			}
 			// Iterate through all files (recursively by default)
-			files.each { file ->
+			yamlFiles.each { file ->
 			println "Processing file: ${file.name}"
 			if (file.name.endsWith(".yaml") || file.name.endsWith(".yml")) {
 			echo "11111111111111111111111"
