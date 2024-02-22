@@ -8,12 +8,7 @@ pipeline{
 			def baseDir = new File("${WORKSPACE}")
 			echo "${WORKSPACE}"
 			sh 'ls'
-			def yamlFiles = []
-			new File(baseDir).eachFileRecurse(FileType.FILES) { file ->
-			  if (file.name.endsWith(".yaml")) {
-			    yamlFiles << file
-			  }
-			}
+			def files = dir(glob: '**/*.yaml', recursive: true)
 			// Iterate through all files (recursively by default)
 			yamlFiles.each { file ->
 			println "Processing file: ${file.name}"
