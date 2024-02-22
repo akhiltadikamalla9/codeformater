@@ -10,7 +10,7 @@ pipeline{
 			sh 'ls'
 			def files = dir(glob: '**/*.yaml', baseDir: folderPath)
 			// Iterate through all files (recursively by default)
-			dir.eachFileRecurse { file ->
+			files.each { file ->
 			println "Processing file: ${file.name}"
 			if (file.name.endsWith(".yaml") || file.name.endsWith(".yml")) {
 			echo "11111111111111111111111"
