@@ -8,7 +8,7 @@ pipeline{
 			def baseDir = new File("${WORKSPACE}")
 			echo "${WORKSPACE}"
 			sh 'ls'
-			sh 'find ${WORKSPACE} -name "*.{yaml}" | xargs yamllint -'
+			sh 'find . -name "*.yaml" | xargs yamllint -'
 			
             }
         }
